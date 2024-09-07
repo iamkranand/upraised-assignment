@@ -28,15 +28,16 @@ const Questions = (props) => {
   }
 
   const handleSubmit = () => {
-    props.submitAnswer({id: question.id, answer: [answer]});
-    if(index < questions.length -1){
-      setIndex(index +1);
-      setAnswer([]);
+    if (answer.length > 0) {
+      props.submitAnswer({ id: question.id, answer: [answer] });
+      if (index < questions.length - 1) {
+        setIndex(index + 1);
+        setAnswer([]);
+      } else {
+        props.finishQuiz();
+      }
     }
-    else {
-      props.finishQuiz();
-    }
-  }
+  };
 
   const question = questions[index];
   const val  = ((index+1) / (questions.length)) * 100;
