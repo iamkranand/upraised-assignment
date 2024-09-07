@@ -68,6 +68,10 @@ body,html {
 .question{
 	width: 100%;
 	height: 90%;
+	background-color: white;
+	color: black;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 .questionContainer {
@@ -88,3 +92,77 @@ body,html {
 /* .next {
 	position: absolute;
 } */
+.progressBar{
+	height: 100px;
+	width: 100px;
+	margin-top: -50px;
+	margin-left: 195px;
+	border-radius: 50%;
+	background-color: white;
+	border: 5px solid white;
+}
+.correct{
+	border-radius: 20px;
+	margin-top: 15px;
+	height:50px;
+	width: 90%;
+	background-color: greenyellow;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.incorrect{
+	border-radius: 20px;
+	margin-top: 15px;
+	height:50px;
+	width: 90%;
+	background-color: rgba(255, 0, 0, 0.547);
+	margin-bottom: 200px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.bullet{
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+}
+.resultContainer{
+	height: 100%;
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+}
+.green {
+	background-color: green;
+}
+.red{
+	background-color: red;
+}
+.questionImage{
+	height: 200px;
+	width: 300px;
+}
+
+.options {
+	border-radius: 10px;
+	font-size: 26px;
+	margin-top: 10px;
+	margin-left: 30px;
+	height: 50px;
+	width: 90%;
+	background-color: rgba(128, 128, 128, 0.452);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	input{
+		margin-left: 20px;
+		margin-right: 20px;
+		height: 20px;
+		width: 20px;
+	}
+
+}

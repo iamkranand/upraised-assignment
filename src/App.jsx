@@ -1,29 +1,47 @@
 import './App.css';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Welcome from './components/Welcome';
 import Questions from './components/Questions';
 import Result from './components/Result';
 
 function App() {
   const [screen,setScreen] = useState('welcome');
+  const [questions,setQuestions] = useState([]);
+  const [userInput,setUserInput] = useState([]);
+  useEffect(()=>{
+		const fetchQuestions = async () => {
+			try {
+				const res = await fetch('http://localhost:3000/data')
+				const data = await res.json();
+				setQuestions(data)
+			} catch (error) {
+				throw new Error('Error fetching Question API')
+			}
+		}
+
+		fetchQuestions();
+	},[])
   
   function startQuiz (){
     setScreen('quiz')
   }
 
   function finishQuiz(){
-    console.log('Quiz Finished');
     setScreen('result')
   }
 
   function submitAnswer(data){
-    console.log('data submitted',data);
+    setUserInput((prevState)=>[...prevState,data]);
+  }
+  function restartQuiz(){
+    setUserInput([])
+    setScreen('quiz')
   }
 
   return (
     <>{screen === 'welcome' && (<Welcome startQuiz={startQuiz}></Welcome>)}
-        {screen === 'quiz' && (<Questions submitAnswer = {(data) => submitAnswer(data)} finishQuiz={finishQuiz}></Questions>)}
-        {screen === 'result' && (<Result></Result>)}   
+        {screen === 'quiz' && (<Questions submitAnswer = {(data) => submitAnswer(data)} finishQuiz={finishQuiz} questions={questions}></Questions>)}
+        {screen === 'result' && (<Result data={userInput} retake = {restartQuiz}></Result>)}   
     </>
   )
 }
