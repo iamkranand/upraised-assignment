@@ -78,8 +78,7 @@ const Result = (props) => {
               <div>Incorrect</div>
             </div>
           </div>
-		  {per <= 60 ? (<button className="buttonAll next" onClick={props.retake}>Start Again</button>) : ''}
-          
+		  {per <= 60 ? (<button className="buttonAll next" onClick={props.retake}>Start Again</button>) : (<button className="buttonAll next" onClick={props.back}>Return Home</button>) }
         </div>
       </Wrapper>
     </>

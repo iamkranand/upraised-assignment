@@ -74,10 +74,10 @@ const Questions = (props) => {
                 <label htmlFor={option}>{option}</label>
               </div>
             ))}
-          </div>
           <button className="buttonAll next" onClick={handleSubmit}>
-            Next
+            {index < questions.length -1 ? 'Next' : 'Submit' }
           </button>
+          </div>
         </div>
       </Wrapper>
     </div>

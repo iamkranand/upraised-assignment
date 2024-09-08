@@ -37,11 +37,14 @@ function App() {
     setUserInput([])
     setScreen('quiz')
   }
+  function returnHome(){
+    setScreen('welcome');
+  }
 
   return (
     <>{screen === 'welcome' && (<Welcome startQuiz={startQuiz}></Welcome>)}
         {screen === 'quiz' && (<Questions submitAnswer = {(data) => submitAnswer(data)} finishQuiz={finishQuiz} questions={questions}></Questions>)}
-        {screen === 'result' && (<Result data={userInput} retake = {restartQuiz}></Result>)}   
+        {screen === 'result' && (<Result data={userInput} retake = {restartQuiz} back={returnHome}></Result>)}   
     </>
   )
 }

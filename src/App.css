@@ -1,25 +1,25 @@
 body,html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	color: white;
 }
 
 .App{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  width: 500px;
-  background: linear-gradient(to bottom,white,rgb(112, 112, 223));
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	width: 500px;
+	background: linear-gradient(to bottom,white,rgb(112, 112, 223));
 }
+
 .logo{
 	margin-top: 15px;
 	color: black;
@@ -37,18 +37,19 @@ body,html {
 	font-size: 36px;
 	font-weight: 900;
 }
+
 .startButton{
 	margin-bottom: 100px;
 }
+
 .wrapper{
 	display: flex;
   	flex-direction: column;
-
   	align-items: center;
-	  height: 100vh;
-	  text-align: center;
-	  width: 500px;
-	  background: linear-gradient(to bottom,white,rgb(112, 112, 223));
+	height: 100vh;
+	text-align: center;
+	width: 500px;
+	background: linear-gradient(to bottom,white,rgb(112, 112, 223));
 }
 
 .buttonAll{
@@ -60,6 +61,7 @@ body,html {
 	font-weight: bolder;
 	color: white;
 }
+
 .topDesign {
 	height: 200px;
 	width:100%
@@ -81,17 +83,14 @@ body,html {
 	width: 100%;
 }
 
-
 .componentContainer {
-	margin-top: 25px;
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 }
-/* .next {
-	position: absolute;
-} */
+
 .progressBar{
 	height: 100px;
 	width: 100px;
@@ -101,6 +100,7 @@ body,html {
 	background-color: white;
 	border: 5px solid white;
 }
+
 .correct{
 	border-radius: 20px;
 	margin-top: 15px;
@@ -112,6 +112,7 @@ body,html {
 	justify-content: flex-start;
 	align-items: center;
 }
+
 .incorrect{
 	border-radius: 20px;
 	margin-top: 15px;
@@ -123,11 +124,13 @@ body,html {
 	justify-content: flex-start;
 	align-items: center;
 }
+
 .bullet{
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
 }
+
 .resultContainer{
 	height: 100%;
 	width: 30%;
@@ -136,12 +139,15 @@ body,html {
 	align-items: center;
 	padding-left: 20px;
 }
+
 .green {
 	background-color: green;
 }
+
 .red{
 	background-color: red;
 }
+
 .questionImage{
 	height: 200px;
 	width: 300px;
@@ -164,5 +170,10 @@ body,html {
 		height: 20px;
 		width: 20px;
 	}
-
+}
+.next{
+	position:fixed;
+	bottom:40px;
+	left: 50%;
+	transform: translate(-50%);
 }
